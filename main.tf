@@ -16,7 +16,7 @@ resource "null_resource" "expenseApp" {
     provisioner "local-exec" {
     command = <<EOT
       sleep 10; 
-      cd /home/ec2-user/ansible_Expense_Roles; 
+      cd /home/ec2-user/ansible_Expense_Roles\Roles; 
       ansible-playbook -i inv-${var.env} -e ansible_username=ec2-user -e ansible_password=DevOps321 -e env=dev -e component=${each.value["Name"]} expense.yml
     EOT
     
