@@ -18,20 +18,7 @@ variable "domain" {
     default = "eternallearnings.shop"
 }
 variable "env" {}
-variable "Name" {}
 
 variable "components" {
-
- default = {
-    mysql = {
-        Name = "mysql"
-    }
-    backend = {
-        Name = "backend"
-    }
-    frontend = {
-        Name = "frontend"
-    }
   
-}
 }
