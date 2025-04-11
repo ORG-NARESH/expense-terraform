@@ -17,7 +17,7 @@ resource "null_resource" "expenseApp" {
     type     = "ssh"
     user     = var.user
     password = var.password
-    host     = data.aws_instance.main.private_ip
+    host     = data.aws_instance.main.private_ip[each.key]
   }
    provisioner "remote-exec" {
     inline = [
