@@ -1,3 +1,11 @@
+variable "user" {
+  default = "ec2-user"
+}
+
+variable "password" {
+  default = "DevOps321"
+}
+
 variable "ami" {
     default = "ami-0fcc78c828f981df2"
 }

@@ -13,13 +13,18 @@ module "app"{
 
 resource "null_resource" "expenseApp" {
     for_each = var.components
-    provisioner "local-exec" {
-    command = <<EOT
-      sleep 10; 
-      cd /home/ec2-user/ansible_Expense_Roles/Roles; 
-      ansible-playbook -i inv-${var.env} -e ansible_username=ec2-user -e ansible_password=DevOps321 -e env=dev -e component=${each.value["Name"]} expense.yml
-    EOT
-    
-    }
+    connection {
+    type     = "ssh"
+    user     = var.user
+    password = var.password
+    host     = aws_instance.main.private_ip
+  }
+   provisioner "remote-exec" {
+    inline = [
+      "sleep 10",
+      "pip3.11 install ansible -y",
+      "ansible-pull -U https://github.com/ORG-NARESH/ansible_Expense_Roles.git -e env=dev -e component=${each.value["Name"]} expense-pull.yml "
+    ]
+  }
   
 }
