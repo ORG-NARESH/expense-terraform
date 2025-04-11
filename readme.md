@@ -1,0 +1,1 @@
+This repo is to create expense app using terraform code and running via jenkins pipelines
