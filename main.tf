@@ -12,6 +12,7 @@ module "app"{
 }
 
 resource "null_resource" "expenseApp" {
+    for_each = var.components
     provisioner "local-exec" {
     command = "sleep 10; cd /home/ec2-user/ansible_Expense_Roles ; ansible-playbook -i inv-${var.env} -e ansible_username=ec2-user -e ansible_password=DevOps321 -e env=dev -e component=${var.components[each.value["Name"]]} expense.yml"
     
