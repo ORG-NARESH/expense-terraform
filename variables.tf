@@ -20,5 +20,17 @@ variable "domain" {
 variable "env" {}
 
 variable "components" {
+
+ default = {
+    mysql = {
+        Name = "mysql"
+    }
+    backend = {
+        Name = "backend"
+    }
+    frontend = {
+        Name = "frontend"
+    }
   
+}
 }
