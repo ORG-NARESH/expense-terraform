@@ -12,7 +12,7 @@ module "app"{
 }
 
 resource "null_resource" "expenseApp" {
-    for_each = var.components
+
     connection {
     type     = "ssh"
     user     = var.user
