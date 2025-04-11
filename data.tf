@@ -1,7 +1,7 @@
 data "aws_instance" "main" {
     filter {
     name   = "tag:Name"
-    values = [each.value["Name"]] 
+    values = "frontend"
   }
 }
 
