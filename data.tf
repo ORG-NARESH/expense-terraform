@@ -2,7 +2,7 @@ data "aws_instance" "main" {
     for_each = var.components
     filter {
     name   = "tag:Name"
-    values = [var.components[each.value["Name"]]]
+    values = [each.value["Name"]]
   }
 }
 
