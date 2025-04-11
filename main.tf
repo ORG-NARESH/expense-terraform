@@ -7,6 +7,7 @@ module "app"{
     zone_id = var.zone_id
     domain = var.domain
     instance_type = var.instance_type
+    env = var.env
 
 }
 # module "mysql"{
