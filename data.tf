@@ -2,7 +2,7 @@ data "aws_ami" "main" {
   most_recent = true
 
   filter {
-    name   = "name"
+    name   = "Name"
     values = ["DevOps-LabImage-RHEL9"]
   }
 
