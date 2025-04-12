@@ -18,13 +18,13 @@ resource "null_resource" "expenseApp" {
     type     = "ssh"
     user     = var.user
     password = var.password
-    host     = data.aws_instance.main.private_ip
+    host     = aws_instance.main.private_ip
   }
    provisioner "remote-exec" {
     inline = [
       "sleep 10",
       "pip3.11 install ansible -y",
-      "ansible-pull -U https://github.com/ORG-NARESH/ansible_Expense_Roles.git -e env=dev -e component=${each.value["Name"]} expense-pull.yml "
+      "ansible-pull -U https://github.com/ORG-NARESH/ansible_Expense_Roles.git -e env=dev -e component=${each.value["Name"]} expense-pull.yml"
     ]
   }
   
