@@ -23,7 +23,7 @@ resource "null_resource" "expenseApp" {
    provisioner "remote-exec" {
     inline = [
       "sleep 10",
-      "pip3.11 install ansible -y",
+      "pip3.11 install ansible",
       "ansible-pull -U https://github.com/ORG-NARESH/ansible_Expense_Roles.git -e env=dev -e component=${each.value["Name"]} expense-pull.yml"
     ]
   }
