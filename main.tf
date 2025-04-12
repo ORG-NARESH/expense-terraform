@@ -12,8 +12,8 @@ module "app"{
 }
 
 resource "null_resource" "expenseApp" {
+  depends_on = [ module.app ]
     for_each = var.components
-
     connection {
     type     = "ssh"
     user     = var.user
