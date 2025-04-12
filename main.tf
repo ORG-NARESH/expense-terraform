@@ -18,7 +18,7 @@ resource "null_resource" "expenseApp" {
     type     = "ssh"
     user     = var.user
     password = var.password
-    host     = module.app.private_ip[each.value["Name"]]
+    host     = module.app[each.value["Name"]].private_ip
   }
    provisioner "remote-exec" {
     inline = [
