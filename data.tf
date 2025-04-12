@@ -1,7 +1,10 @@
-# data "aws_instance" "main" {
-#     private_ip = data.aws_instance.main.private_ip
-# }
+data "aws_ami" "main" {
+  most_recent = true
 
-# output "private_ip" {
-#     value = data.aws_instance.main.private_ip
-# }
+  filter {
+    name   = "name"
+    values = [DevOps-LabImage-RHEL9]
+  }
+
+  owners = ["703671922956"]
+}
