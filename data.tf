@@ -1,10 +1,10 @@
-data "aws_ami" "main" {
-  most_recent = true
+# data "aws_ami" "main" {
+#   most_recent = true
 
-  filter {
-    name   = "Name"
-    values = ["DevOps-LabImage-RHEL9"]
-  }
+#   filter {
+#     name   = "Name"
+#     values = ["DevOps-LabImage-RHEL9"]
+#   }
 
-  owners = ["703671922956"]
-}
+#   owners = ["703671922956"]
+# }
