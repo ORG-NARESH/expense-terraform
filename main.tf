@@ -19,12 +19,13 @@ resource "null_resource" "expenseApp" {
     user     = var.user
     password = var.password
     host     = "${each.value["Name"]}-${var.env}.${var.domain}"
-  }
+    }
+  
    provisioner "remote-exec" {
     inline = [
       "sleep 10",
       "pip3.11 install ansible",
-      "ansible-pull -U https://github.com/ORG-NARESH/ansible_Expense_Roles.git -e env=dev -e component=${each.value["Name"]} expense-pull.yml"
+      "ansible-pull -U https://github.com/ORG-NARESH/ansible_Expense_Roles.git -e env=dev -e component=${each.value["Name"]} Roles/expense-pull.yml"
     ]
   }
   
