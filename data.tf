@@ -10,9 +10,9 @@ data "aws_ami" "main" {
 }
 
 
-output "verifyingDns" {
-  value = data.aws_security_group.main.id
-}
+# output "verifyingDns" {
+#   value = data.aws_security_group.main.id
+# }
 
 # data "aws_security_group"  "main" {
 #     id =  data.aws_security_group.main.id
