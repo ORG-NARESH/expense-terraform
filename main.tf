@@ -5,7 +5,7 @@ module "app"{
     vpc_security_group_ids = data.aws_security_group.main.id
     Name = each.value["Name"]
     zone_id = data.aws_route53_record.main.id
-    domain = data.aws_route53_record.name
+    domain = var.domain
     instance_type = each.value["instance_type"]
     env = var.env
     #port_no = each.value["port_no"]
