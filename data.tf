@@ -21,8 +21,7 @@ data "aws_security_group" "main" {
 }
 
 data "aws_route53_zone" "main" {
-  name         = "eternallearnings.shop"
-
+  name         = var.domain
 }
 
 # data "aws_route53_zone" "main1" {
