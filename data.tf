@@ -10,7 +10,7 @@ data "aws_ami" "main" {
 }
 
 
-output "verifying dns" {
+output "verifyingDns" {
   value = data.aws_security_group.main.id
 }
 
