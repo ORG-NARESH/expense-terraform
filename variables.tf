@@ -30,23 +30,20 @@ variable "components" {
  default = {
     mysql = {
         Name = "mysql"
-        port_no = "3306"
+        #port_no = "3306"
         instance_type = "t3.micro"
     }
     backend = {
         Name = "backend"
-        port_no = "8080"
+        #port_no = "8080"
         instance_type = "t2.micro"
     }
     frontend = {
         Name = "frontend"
-        port_no = "80"
+        #port_no = "80"
         instance_type = "t2.small"
     }
   
 }
 }
 
-variable "port_no" {
-  
-}
