@@ -1,13 +1,28 @@
 data "aws_ami" "main" {
-  most_recent = true
+ 
+  most_recent      = true
+  owners           = ["703671922956"]
 
   filter {
-    name   = "Name"
+    name   = "name"
     values = ["DevOps-LabImage-RHEL9"]
   }
 
-  owners = ["703671922956"]
 }
+
+
+
+
+# data "aws_ami" "main" {
+#   most_recent = true
+
+#   filter {
+#     name   = "Name"
+#     values = ["DevOps-LabImage-RHEL9"]
+#   }
+
+#   owners = ["703671922956"]
+# }
 
 
 # output "verifyingDns" {
