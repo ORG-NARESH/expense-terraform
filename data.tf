@@ -22,3 +22,8 @@ data "aws_route53_zone" "main" {
   name         = "eternallearnings.shop"
 
 }
+
+data "aws_route53_zone" "main" {
+ zone_id = data.aws_route53_record.main.zone_id
+}
+
