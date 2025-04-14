@@ -18,7 +18,7 @@ data "aws_ami" "main" {
 
 data "aws_security_group" "main" {
     
-  name = "[B59-Terraform-SG]"                         
+  name = "B59-Terraform-SG"                         
 }
 
 data "aws_route53_zone" "main" {
