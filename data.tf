@@ -2,7 +2,11 @@ data "aws_ami" "main" {
  
   most_recent      = true
   owners           = ["355449129696"]
-  description = "DevOps-LabImage-RHEL9"
+  
+ filter {
+    name   = "description"
+    values = ["DevOps-LabImage-RHEL9"]
+  }
 
 
 }
