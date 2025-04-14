@@ -16,10 +16,10 @@ data "aws_ami" "main" {
 #   value = data.aws_security_group.main.id
 # }
 
-data "aws_security_group" "main" {
-    
-  name = var.security_group_name                       
-}
+# data "aws_security_group" "main" {
+
+#   name = var.security_group_name                       
+# }
 
 data "aws_route53_zone" "main" {
   name         = var.domain
