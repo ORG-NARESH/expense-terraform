@@ -46,3 +46,7 @@ variable "components" {
   
 }
 }
+
+variable "port_no" {
+  
+}
