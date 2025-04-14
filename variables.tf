@@ -16,7 +16,7 @@ variable "domain" {
 # }
 
 variable "security_group_name" {
-    type = string
+    
     default = ["B59-Terraform-SG"]
 }
 
