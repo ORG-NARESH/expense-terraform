@@ -4,7 +4,7 @@ data "aws_ami" "main" {
   owners           = ["703671922956"]
 
   filter {
-    name   = "name"
+    name   = "Name"
     values = ["DevOps-LabImage-RHEL9"]
   }
 
