@@ -16,7 +16,7 @@ variable "vpc_security_group_ids" {
 }
 
 variable "security_group_name" {
-    
+    type    = list(string)
     default = ["B59-Terraform-SG"]
 }
 

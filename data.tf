@@ -17,6 +17,7 @@ data "aws_ami" "main" {
 # }
 
 data "aws_security_group" "main" {
+    
   name = ["B59-Terraform-SG"]                             
 }
 
