@@ -31,6 +31,10 @@ module "backend" {
   ami = data.aws_ami.main.id
   zone_id = data.aws_route53_zone.main.zone_id
   domain = var.domain
+  vpc_security_group_ids = var.vpc_security_group_ids
+  Name = var.components[each.value["backend"]]
+  env = var.env
+  instance_type = ""
   
 }
 
@@ -40,6 +44,10 @@ module "frontend" {
   ami = data.aws_ami.main.id
   zone_id = data.aws_route53_zone.main.zone_id
   domain = var.domain
+  vpc_security_group_ids = var.vpc_security_group_ids
+  Name = var.components[each.value["frontend"]]
+  env = var.env
+  instance_type = ""
   
 }
 
