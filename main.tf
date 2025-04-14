@@ -1,13 +1,14 @@
 module "app"{
     source = "git::https://github.com/ORG-NARESH/org-modules-EC2-R53.git"
     for_each = var.components
-    ami = var.ami
-    vpc_security_group_ids = var.vpc_security_group_ids
+    ami = data.aws_ami.main.id
+    vpc_security_group_ids = data.aws_security_group.main.id
     Name = each.value["Name"]
-    zone_id = var.zone_id
-    domain = var.domain
-    instance_type = var.instance_type
+    zone_id = data.aws_route53_record.main.id
+    domain = data.aws_route53_record.name
+    instance_type = each.value["instance_type"]
     env = var.env
+    port_no = each.value["port_no"]
 
 }
 
