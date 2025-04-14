@@ -6,6 +6,9 @@ variable "password" {
   default = "DevOps321"
 }
 
+variable "domain" {
+    default = "eternallearnings.shop"
+}
 
 variable "vpc_security_group_ids" {
      type = list(string)
@@ -13,9 +16,6 @@ variable "vpc_security_group_ids" {
 }
 
 
-variable "domain" {
-    default = "eternallearnings.shop"
-}
 variable "env" {}
 
 variable "components" {

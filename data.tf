@@ -12,18 +12,13 @@ data "aws_ami" "main" {
 }
 
 
-
-
-
-
-
 # output "verifyingDns" {
 #   value = data.aws_security_group.main.id
 # }
 
-# data "aws_security_group"  "main" {
-#     id =  data.aws_security_group.main.id
-# }
+data "aws_security_group" "main" {
+  name = "B59-SG-Terraform"
+}
 
 data "aws_route53_zone" "main" {
   name         = "eternallearnings.shop"
