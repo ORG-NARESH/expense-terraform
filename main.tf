@@ -4,7 +4,7 @@ module "app"{
     ami = data.aws_ami.main.id
     vpc_security_group_ids = var.vpc_security_group_ids
     Name = each.value["Name"]
-    zone_id = "Z0135212GWRZC8NQ42PM"
+    zone_id = data.aws_route53_zone.main.zone_id
     domain = var.domain
     instance_type = each.value["instance_type"]
     env = var.env
