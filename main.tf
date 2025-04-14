@@ -17,6 +17,11 @@ module "mysql" {
   ami = data.aws_ami.main.id
   zone_id = data.aws_route53_zone.main.zone_id
   domain = var.domain
+  vpc_security_group_ids = var.vpc_security_group_ids
+  Name = var.components[each.value["mysql"]]
+  env = var.env
+  instance_type = ""
+
   
 }
 
