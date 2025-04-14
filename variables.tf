@@ -10,10 +10,10 @@ variable "domain" {
     default = "eternallearnings.shop"
 }
 
-# variable "vpc_security_group_ids" {
-#      type = list(string)
-#     default = ["sg-02efeff1df99019a6"]
-# }
+variable "vpc_security_group_ids" {
+     type = list(string)
+    default = ["sg-02efeff1df99019a6"]
+}
 
 variable "security_group_name" {
     
