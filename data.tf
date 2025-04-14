@@ -18,7 +18,7 @@ data "aws_ami" "main" {
 
 data "aws_security_group" "main" {
   filter {
-    name = name
+    name = "name"
     values = var.security_group_name
   }
 
