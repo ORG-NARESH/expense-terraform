@@ -18,7 +18,7 @@ module "mysql" {
   zone_id = data.aws_route53_zone.main.zone_id
   domain = var.domain
   vpc_security_group_ids = var.vpc_security_group_ids
-  Name = var.components[each.value["mysql"]]
+  Name = "mysql"
   env = var.env
   instance_type = ""
 
@@ -32,7 +32,7 @@ module "backend" {
   zone_id = data.aws_route53_zone.main.zone_id
   domain = var.domain
   vpc_security_group_ids = var.vpc_security_group_ids
-  Name = var.components[each.value["backend"]]
+  Name = "backend"
   env = var.env
   instance_type = ""
   
@@ -45,7 +45,7 @@ module "frontend" {
   zone_id = data.aws_route53_zone.main.zone_id
   domain = var.domain
   vpc_security_group_ids = var.vpc_security_group_ids
-  Name = var.components[each.value["frontend"]]
+  Name = "frontend"
   env = var.env
   instance_type = ""
   
