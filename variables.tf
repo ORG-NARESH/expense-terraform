@@ -16,7 +16,7 @@ variable "vpc_security_group_ids" {
 }
 
 variable "security_group_name" {
-    default = ["B59-Terraform-SG"]
+    default = "B59-Terraform-SG"
 }
 
 variable "env" {}
