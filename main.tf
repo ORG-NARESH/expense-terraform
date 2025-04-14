@@ -8,7 +8,7 @@ module "app"{
     domain = data.aws_route53_record.name
     instance_type = each.value["instance_type"]
     env = var.env
-    port_no = each.value["port_no"]
+    #port_no = each.value["port_no"]
 
 }
 
