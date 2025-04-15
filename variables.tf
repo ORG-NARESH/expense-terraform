@@ -12,7 +12,7 @@ variable "domain" {
 
 variable "vpc_security_group_ids" {
      type        = list(string)
-    default = ["sg-02efeff1df99019a6"]
+    
 }
 
 variable "env" {}
