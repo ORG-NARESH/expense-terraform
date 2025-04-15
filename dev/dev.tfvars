@@ -1,5 +1,6 @@
 env = "dev"
 
+components {
 
     mysql = {
         Name = "mysql"
@@ -22,3 +23,4 @@ env = "dev"
         vpc_security_group_ids = ["sg-02efeff1df99019a6"]
     }
   
+}
