@@ -40,6 +40,7 @@ module "frontend" {
 
 
 resource "null_resource" "expenseApp" {
+    depends_on = [module.mysql, module.backend, module.frontend]
     for_each = var.components
     connection {
     type     = "ssh"
