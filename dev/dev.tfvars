@@ -1,8 +1,6 @@
 env = "dev"
 
-variable "components" {
 
- default = {
     mysql = {
         Name = "mysql"
         #port_no = "3306"
@@ -24,5 +22,3 @@ variable "components" {
         vpc_security_group_ids = ["sg-02efeff1df99019a6"]
     }
   
-}
-}
