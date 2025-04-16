@@ -15,7 +15,8 @@ pipeline {
  stages {
     stage ('initiating terraform'){
           steps {
-             sh "terraform init -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars"
+             sh "terraform init -reconfigure  -backend-config=${params.ENVIRONMENT}/state.tf"
+
                 }
             }
     stage('Terrafom plan') {
