@@ -4,6 +4,17 @@ pipeline {
         ansiColor('xterm')
         disableConcurrentBuilds()
         timeout(time: 500, unit: 'SECONDS')
+
+    buildDiscarder(BuildHistoryManager([
+            [
+                matchAtMost: 5,
+                conditions: [
+                    BuildResult(matchStable: true, matchFailure: true, matchUnstable: true, matchAborted: true, matchNotBuilt: true)
+                ]
+            ]
+        ]))
+
+
     }
 
  parameters {
@@ -15,7 +26,7 @@ pipeline {
  stages {
     stage ('initiating terraform'){
           steps {
-             sh "terraform init -reconfigure  -backend-config=${params.ENVIRONMENT}/state.tf"
+             sh "terraform init -reconfigure -backend-config=${params.ENVIRONMENT}/state.tf"
 
                 }
             }
