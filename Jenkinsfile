@@ -6,7 +6,7 @@ pipeline {
 
  parameters {
        
-        choice(name: 'Apply', choices: ['apply', 'destroy'], description: 'select terraform options')
+        choice(name: 'ACTION', choices: ['APPLY', 'DESTROY'], description: 'select terraform options')
 
         }   
  stages {
@@ -22,7 +22,7 @@ pipeline {
             }
     stage('Terraform apply') {
         steps {
-            sh 'terraform apply -var-file=dev/dev.tfvars -auto-approve'
+            sh "terraform ${params.ACTION} -var-file=dev/dev.tfvars -auto-approve"
               }
             }
 
