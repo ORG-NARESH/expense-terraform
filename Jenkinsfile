@@ -6,7 +6,7 @@ pipeline {
 
  parameters {
        
-        choice(name: 'ACTION', choices: ['APPLY', 'DESTROY'], description: 'select terraform options')
+        choice(name: 'ACTION', choices: ['apply', 'destroy'], description: 'select terraform options')
 
         }   
  stages {
