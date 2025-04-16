@@ -27,6 +27,13 @@ pipeline {
              sh "terraform plan -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars"
               }
             }
+
+    stage('Sanity check before terraform apply') {
+            steps {
+                input "This is get applied?"
+            }
+        }
+
     stage('Terraform apply') {
         steps {
             sh "terraform ${params.ACTION} -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars -auto-approve"
