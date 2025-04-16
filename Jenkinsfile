@@ -3,6 +3,12 @@ pipeline {
  options {
         ansiColor('xterm')
     }
+
+ parameters {
+       
+        choice(name: 'Apply', choices: ['apply', 'destroy'], description: 'select terraform options')
+
+        }   
  stages {
     stage ('initiating terraform'){
           steps {
