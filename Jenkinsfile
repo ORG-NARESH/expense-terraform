@@ -5,14 +5,6 @@ pipeline {
         disableConcurrentBuilds()
         timeout(time: 500, unit: 'SECONDS')
 
-    buildDiscarder(BuildHistoryManager([
-            [
-                matchAtMost: 5,
-                conditions: [
-                    BuildResult(matchStable: true, matchFailure: true, matchUnstable: true, matchAborted: true, matchNotBuilt: true)
-                ]
-            ]
-        ]))
 
 
     }
