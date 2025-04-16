@@ -6,7 +6,7 @@ module "mysql" {
   vpc_security_group_ids  = var.components["mysql"].vpc_security_group_ids
   Name = "mysql"
   env = var.env
-  instance_type = ""
+  instance_type = var.components["mysql"].instance_type
 
   
 }
@@ -20,7 +20,7 @@ module "backend" {
   vpc_security_group_ids =  var.components["backend"].vpc_security_group_ids
   Name = "backend"
   env = var.env
-  instance_type = ""
+  instance_type = var.components["backend"].instance_type
   
 }
 
@@ -33,7 +33,7 @@ module "frontend" {
   vpc_security_group_ids =  var.components["frontend"].vpc_security_group_ids
   Name = "frontend"
   env = var.env
-  instance_type = ""
+  instance_type = var.components["frontend"].instance_type
   
 }
 
