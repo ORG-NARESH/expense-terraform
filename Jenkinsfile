@@ -28,11 +28,11 @@ pipeline {
               }
             }
 
-    // stage('Sanity check before terraform apply') {
-    //         steps {
-    //             input "This is get applied?"
-    //         }
-    //     }
+    stage('Sanity check before terraform apply') {
+            steps {
+                input "This is get applied?"
+            }
+        }
 
     stage('Terraform apply') {
         steps {
