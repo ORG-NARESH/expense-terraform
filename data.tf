@@ -32,8 +32,9 @@ data "aws_route53_zone" "main" {
 # # data "aws_route53_zone" "main1" {
 # #  zone_id = data.aws_route53_record.main.zone_id
 # # } 
-# # data "aws_route53_zone" "main" {
-# #  zone_id = data.aws_route53_zone.main.zone_id
+data "aws_route53_zone" "main" {
+ zone_id = data.aws_route53_zone.main.zone_id
   
-# # }
+}
+
 
