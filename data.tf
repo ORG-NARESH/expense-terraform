@@ -26,7 +26,7 @@ data "aws_route53_zone" "main" {
 }
 
 data "aws_security_group" "main" {
-  id = data.aws_security_group.main.security_group_id
+  id = data.aws_security_group.main.id
 }
 
 # data "aws_route53_zone" "main1" {
