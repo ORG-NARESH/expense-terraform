@@ -21,7 +21,7 @@ output "verifyingsecurityID" {
 # #   name = var.security_group_name                       
 # # }
 
-data "aws_route53_zone" "main" {
+data "aws_route53_zone" "name" {
   name         = var.domain
 }
 
@@ -32,7 +32,7 @@ data "aws_route53_zone" "main" {
 # # data "aws_route53_zone" "main1" {
 # #  zone_id = data.aws_route53_record.main.zone_id
 # # } 
-data "aws_route53_zone" "main" {
+data "aws_route53_zone" "id" {
  zone_id = data.aws_route53_zone.main.zone_id
   
 }
