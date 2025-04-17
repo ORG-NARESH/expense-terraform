@@ -25,9 +25,9 @@ data "aws_route53_zone" "main" {
   name         = var.domain
 }
 
-data "aws_security_group" "main" {
-  id = data.aws_security_group.main.id
-}
+# data "aws_security_group" "main" {
+#   id = data.aws_security_group.main.id
+# }
 
 # # data "aws_route53_zone" "main1" {
 # #  zone_id = data.aws_route53_record.main.zone_id
