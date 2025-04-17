@@ -3,7 +3,7 @@ module "mysql" {
   ami = data.aws_ami.main.id
   zone_id = data.aws_route53_zone.main.zone_id
   domain = var.domain
-  vpc_security_group_ids  = var.components["mysql"].vpc_security_group_ids
+  vpc_security_group_ids  = [data.aws_security_group.main.id]
   Name = "mysql"
   env = var.env
   instance_type = var.components["mysql"].instance_type
@@ -17,7 +17,7 @@ module "backend" {
   ami = data.aws_ami.main.id
   zone_id = data.aws_route53_zone.main.zone_id
   domain = var.domain
-  vpc_security_group_ids =  var.components["backend"].vpc_security_group_ids
+  vpc_security_group_ids =  [data.aws_security_group.main.id]
   Name = "backend"
   env = var.env
   instance_type = var.components["backend"].instance_type
@@ -30,7 +30,7 @@ module "frontend" {
   ami = data.aws_ami.main.id
   zone_id = data.aws_route53_zone.main.zone_id
   domain = var.domain
-  vpc_security_group_ids =  var.components["frontend"].vpc_security_group_ids
+  vpc_security_group_ids =  [data.aws_security_group.main.id]
   Name = "frontend"
   env = var.env
   instance_type = var.components["frontend"].instance_type
