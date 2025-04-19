@@ -8,7 +8,8 @@ pipeline {
 
  parameters {
        
-        choice(name: 'ACTION', choices: ['plan', 'apply', 'destroy'], description: 'select terraform options')
+        choice(name: 'ACTION', choices: ['plan', 'destroy'], description: 'select terraform options')
+        string(name: 'OPTION', defaultValue: 'apply', description: 'this will apply')
         choice(name: 'ENVIRONMENT', choices: ['dev', 'prod'], description: 'select environment options')
 
         }   
@@ -33,7 +34,7 @@ pipeline {
 
     stage('Terraform apply') {
         steps {
-            sh "terraform ${params.ACTION} -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars -auto-approve"
+            sh "terraform ${params.OPTION} -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars -auto-approve"
               }
             }
 
