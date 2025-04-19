@@ -30,7 +30,7 @@ data "aws_route53_zone" "name" {
 # }
 
 
-data "aws_route53_zone" "id" {
+data "aws_route53_zone" "main" {
  zone_id = data.aws_route53_zone.main.zone_id
   
 }                 
