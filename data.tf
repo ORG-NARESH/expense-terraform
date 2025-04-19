@@ -21,7 +21,7 @@ data "aws_ami" "main" {
 # #   name = var.security_group_name                       
 # # }
 
-data "aws_route53_zone" "name" {
+data "aws_route53_zone" "main" {
   name         = var.domain
 }
 
