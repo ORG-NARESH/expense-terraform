@@ -10,10 +10,7 @@ variable "domain" {
     default = "eternallearnings.shop"
 }
 
-# variable "vpc_security_group_ids" {
-#      type        = list(string)
-    
-# }
+
 
 variable "env" {}
 
