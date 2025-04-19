@@ -3,11 +3,8 @@ pipeline {
  options {
         ansiColor('xterm')
         disableConcurrentBuilds()
-       
-
-
-
-    }
+        buildDiscarder(logRotator(numToKeepStr: "2"))
+}
 
  parameters {
        
