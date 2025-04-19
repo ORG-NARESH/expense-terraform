@@ -25,11 +25,11 @@ pipeline {
               }
             }
 
-    stage('Sanity check before terraform apply') {
-            steps {
-                input "Click on Yes to approve terraform apply"
-            }
-        }
+    // stage('Sanity check before terraform apply') {
+    //         steps {
+    //             input "Click on Yes to approve terraform apply"
+    //         }
+    //     }
 
     stage('Terraform apply') {
         steps {
