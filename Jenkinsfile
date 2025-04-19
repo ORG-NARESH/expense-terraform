@@ -8,8 +8,8 @@ pipeline {
 
  parameters {
        
-        choice(name: 'ACTION', choices: ['plan', 'destroy'], description: 'select terraform options')
-        string(name: 'OPTION', defaultValue: 'apply', description: 'this will apply')
+        choice(name: 'PREACTION', choices: ['plan'], description: 'select terraform planning')
+        choice(name: 'ACTION', choices: ['apply', 'destroy'], description: 'select terraform options')
         choice(name: 'ENVIRONMENT', choices: ['dev', 'prod'], description: 'select environment options')
 
         }   
