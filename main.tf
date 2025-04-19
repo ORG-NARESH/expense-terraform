@@ -1,7 +1,7 @@
 module "mysql" {
   source = "git::https://github.com/ORG-NARESH/org-modules-EC2-R53.git"
   ami = data.aws_ami.main.id
-  zone_id = data.aws_route53_zone.main.id
+  zone_id = data.aws_route53_zone.main.zone_id
   domain = var.domain
   #vpc_security_group_ids  = [aws_security_group.main.id]  
   Name = "mysql"
@@ -15,7 +15,7 @@ module "backend" {
   depends_on = [ module.mysql ]
   source = "git::https://github.com/ORG-NARESH/org-modules-EC2-R53.git"
   ami = data.aws_ami.main.id
-  zone_id = data.aws_route53_zone.main.id
+  zone_id = data.aws_route53_zone.main.zone_id
   domain = var.domain
   #vpc_security_group_ids =  var.vpc_security_group_ids
   Name = "backend"
@@ -28,7 +28,7 @@ module "frontend" {
   depends_on = [ module.backend ]
   source = "git::https://github.com/ORG-NARESH/org-modules-EC2-R53.git"
   ami = data.aws_ami.main.id
-  zone_id = data.aws_route53_zone.main.id
+  zone_id = data.aws_route53_zone.main.zone_id
   domain = var.domain
   #vpc_security_group_ids = var.vpc_security_group_ids
   Name = "frontend"
