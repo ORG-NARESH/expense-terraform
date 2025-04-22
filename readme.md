@@ -16,3 +16,10 @@ To destroy PROD environement now
 
 terraform init -reconfigure  -backend-config=prod/state.tf
 terraform destroy  -var-file=prod/prod.tfvars
+
+
+#############################
+
+sudo find / -name *jobs*
+sudo find / -name .terraform
+/var/lib/jenkins/workspace/tools_automation/.terraform

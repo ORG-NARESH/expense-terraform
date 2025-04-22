@@ -12,27 +12,9 @@ data "aws_ami" "main" {
 }
 
 
-# output "verifyingsecurityID" {
-#   value = data.aws_security_group.main.id
-# }
-
-# # data "aws_security_group" "main" {
-
-# #   name = var.security_group_name                       
-# # }
-
 data "aws_route53_zone" "main" {
   name         = var.domain
 }
 
-# data "aws_security_group" "main" {
-#   id = data.aws_security_group.main.id
-# }
-
-
-# data "aws_route53_zone" "main" {
-#  zone_id = data.aws_route53_zone.main.zone_id
-  
-# }                 
 
 
