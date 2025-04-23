@@ -1,7 +1,7 @@
 pipeline {
     agent any
     options {
-        
+        ansiColor('xterm')
         disableConcurrentBuilds()
         buildDiscarder(logRotator(numToKeepStr: "2"))
     }
@@ -24,7 +24,7 @@ stages {
         }
   
 
-    stages {
+  
         stage('Initiating Terraform') {
             steps {
                 sh "rm -rf .terraform"
@@ -45,5 +45,4 @@ stages {
             }
         }
     }
-}
 }
