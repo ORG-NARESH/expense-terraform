@@ -16,12 +16,7 @@ pipeline {
 }
 
 stages {
-        stage('Verify Vault Connectivity') {
-            steps {
-                sh "sudo curl -k https://vault.eternallearnings.shop:8200/expense-dev/mysql"
-               
-            }
-        }
+        
   
 
   
