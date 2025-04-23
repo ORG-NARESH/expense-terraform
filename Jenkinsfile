@@ -16,6 +16,7 @@ pipeline {
  stages {
     stage ('initiating terraform'){
           steps {
+                 "rm -rf .terraform"
              sh "terraform init -reconfigure -backend-config=${params.ENVIRONMENT}/state.tf"
 
                 }
