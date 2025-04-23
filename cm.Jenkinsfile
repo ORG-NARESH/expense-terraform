@@ -8,6 +8,7 @@ pipeline {
 
     parameters {
         choice(name: 'ENVIRONMENT', choices: ['dev', 'prod'], description: 'Select environment options')
+       choice(name: 'ACTION', choices: ['apply', 'destroy'], description: 'Select terraform options')
     }
 
     environment {
@@ -36,7 +37,7 @@ stages {
                 script {
                     // Apply only the null_resource for configuration management
                     sh """
-                        terraform apply -target=null_resource.expenseApp \
+                        terraform ${params.ACTION} -target=null_resource.expenseApp \
                         -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars \
                         -auto-approve
                     """
