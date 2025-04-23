@@ -10,6 +10,19 @@ pipeline {
         choice(name: 'ENVIRONMENT', choices: ['dev', 'prod'], description: 'Select environment options')
     }
 
+    environment {
+    VAULT_SKIP_VERIFY = 'true'
+}
+
+stages {
+        stage('Verify Vault Connectivity') {
+            steps {
+                sh "curl -k https://vault.eternallearnings.shop:8200/v1/expense-dev/mysql"
+               
+            }
+        }
+  
+
     stages {
         stage('Initiating Terraform') {
             steps {
