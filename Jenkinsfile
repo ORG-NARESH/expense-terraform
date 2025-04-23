@@ -21,9 +21,9 @@ pipeline {
 
                 }
             }
-    stage('Terrafom plan') {
+    stage('Terrafom apply') {
         steps {
-             sh "terraform ${params.ACTION}  -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars"
+             sh "terraform ${params.ACTION}  -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars -auto-approve"
               }
             }
 
@@ -33,11 +33,7 @@ pipeline {
     //         }
     //     }
 
-    stage('Terraform apply') {
-        steps {
-            sh "terraform ${params.OPTION} -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars -auto-approve"
-              }
-            }
+
 
         }
 }
