@@ -8,24 +8,27 @@ pipeline {
 
  parameters {
        
-        
         choice(name: 'ACTION', choices: ['apply', 'destroy'], description: 'select terraform options')
         choice(name: 'ENVIRONMENT', choices: ['dev', 'prod'], description: 'select environment options')
+}  
+ environment {
+    
+     vault_token = credentials('vault_token')
+   } 
 
-        }   
  stages {
     stage ('initiating terraform'){
           steps {
               sh "rm -rf .terraform"
-             sh "terraform init -reconfigure -backend-config=${params.ENVIRONMENT}/state.tf"
+             sh "terraform init -reconfigure -backend-config=${params.ENVIRONMENT}/state.tf -var token=${vault_token}"
              
                 }
             }
     stage('Terrafom apply') {
         steps {
-             sh "terraform ${params.ACTION} -target=module.mysql  -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars -auto-approve"
-             sh "terraform ${params.ACTION} -target=module.backend  -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars -auto-approve"
-             sh "terraform ${params.ACTION} -target=module.frontend  -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars -auto-approve" 
+             sh "terraform ${params.ACTION} -target=module.mysql  -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars -auto-approve -var token=${vault_token}"
+             sh "terraform ${params.ACTION} -target=module.backend  -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars -auto-approve -var token=${vault_token}"
+             sh "terraform ${params.ACTION} -target=module.frontend  -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars -auto-approve -var token=${vault_token}" 
               }
             }
 
