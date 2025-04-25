@@ -33,15 +33,14 @@ stages {
         stage('Run Configuration Management') {
             steps {
                 
-                script {
-                    // Apply only the null_resource for configuration management
+            // Apply only the null_resource for configuration management
                     sh 
                     """
                         terraform ${params.ACTION} -target=null_resource.expenseApp \
                         -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars \
                         -var token=${vault_token} -auto-approve
                     """
-                }
+                
             }
         }
     }
