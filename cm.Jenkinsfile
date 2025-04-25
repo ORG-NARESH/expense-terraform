@@ -12,14 +12,11 @@ pipeline {
     }
 
     environment {
-    VAULT_SKIP_VERIFY = 'true'
+    
+    VAULT_TOKEN = credentials('valut_token')
    }
 
-    environment {
-            
-           VAULT_TOKEN = credentials('valut_token')
-        }
-
+    
 stages {
         
   
