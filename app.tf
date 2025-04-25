@@ -7,12 +7,12 @@
 #     password = var.password
 #     host     = "${each.value["Name"]}-${var.env}.${var.domain}"
 #     }
-  
+
 #    provisioner "remote-exec" {
 #     inline = [
 #       "sleep 10",
 #       "ansible-pull -U https://github.com/ORG-NARESH/ansible_Expense_Roles.git -e env=${var.env} -e component=${each.value["Name"]} Roles/expense-pull.yml"
 #     ]
 #   }
-  
+
 # }

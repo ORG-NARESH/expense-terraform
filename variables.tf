@@ -7,7 +7,7 @@ variable "password" {
 }
 
 variable "domain" {
-    default = "eternallearnings.shop"
+  default = "eternallearnings.shop"
 }
 
 
@@ -16,28 +16,28 @@ variable "env" {}
 
 variable "components" {
 
- default = {
+  default = {
     mysql = {
-        Name = "mysql"
-        port_no = "3306"
-        instance_type = "t3.micro"
-        
+      Name          = "mysql"
+      port_no       = "3306"
+      instance_type = "t3.micro"
+
     }
     backend = {
-       
-        Name = "backend"
-        port_no = "8080"
-        instance_type = "t2.micro"
-        
+
+      Name          = "backend"
+      port_no       = "8080"
+      instance_type = "t2.micro"
+
     }
     frontend = {
-        
-        Name = "frontend"
-        port_no = "80"
-        instance_type = "t2.small"
-        
+
+      Name          = "frontend"
+      port_no       = "80"
+      instance_type = "t2.small"
+
     }
-  
-}
+
+  }
 }
 
