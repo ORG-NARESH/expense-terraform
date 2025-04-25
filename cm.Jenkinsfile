@@ -26,7 +26,7 @@ stages {
             steps {
                 withCredentials([string(credentialsId: 'vault_token', variable: 'token')])
                 sh "rm -rf .terraform"
-                sh "terraform init -reconfigure -backend-config=${params.ENVIRONMENT}/state.tf -var token=${VAULT_TOKEN}"
+                sh "terraform init -reconfigure -backend-config=${params.ENVIRONMENT}/state.tf"
             }
         }
 
@@ -38,7 +38,7 @@ stages {
                     sh """
                         terraform ${params.ACTION} -target=null_resource.expenseApp \
                         -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars \
-                        -var token=${VAULT_TOKEN}
+                        
 
                         -auto-approve
                     """

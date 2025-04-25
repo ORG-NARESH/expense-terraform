@@ -8,7 +8,7 @@ module "mysql" {
   env           = var.env
   instance_type = var.components["mysql"].instance_type
   port_no       = var.components["mysql"].port_no
-
+  token         = var.token
 
 }
 
@@ -23,6 +23,7 @@ module "backend" {
   env           = var.env
   instance_type = var.components["backend"].instance_type
   port_no       = var.components["backend"].port_no
+  token         = var.token
 
 }
 
@@ -37,6 +38,7 @@ module "frontend" {
   env           = var.env
   instance_type = var.components["frontend"].instance_type
   port_no       = var.components["frontend"].port_no
+  token         = var.token
 
 }
 

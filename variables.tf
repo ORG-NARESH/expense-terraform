@@ -1,6 +1,9 @@
 variable "user" {
   default = "ec2-user"
 }
+variable "token" {
+
+}
 
 variable "password" {
   default = "DevOps321"
