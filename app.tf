@@ -11,7 +11,7 @@ resource "null_resource" "expenseApp" {
   provisioner "remote-exec" {
     inline = [
       "sleep 10",
-      "ansible-pull -U https://github.com/ORG-NARESH/ansible_Expense_Roles.git -e env=${var.env} -e component=${each.value["Name"]} -e token=${var.token} Roles/expense-pull.yml"
+      "ansible-pull -U https://github.com/ORG-NARESH/ansible_Expense_Roles.git -e env=${var.env} -e component=${each.value["Name"]} -e token=${var.token} -e ansible_python_interpreter=/usr/bin/python3.11 Roles/expense-pull.yml"
     ]
   }
 
