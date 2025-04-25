@@ -13,7 +13,12 @@ pipeline {
 
     environment {
     VAULT_SKIP_VERIFY = 'true'
-}
+   }
+
+    environment {
+            
+           VAULT_TOKEN = credentials('valut_token')
+        }
 
 stages {
         
@@ -23,7 +28,7 @@ stages {
         stage('Initiating Terraform') {
             steps {
                 sh "rm -rf .terraform"
-                sh "terraform init -reconfigure -backend-config=${params.ENVIRONMENT}/state.tf"
+                sh "terraform init -reconfigure -backend-config=${params.ENVIRONMENT}/state.tf -var token=${VAULT_TOKEN}"
             }
         }
 
@@ -34,6 +39,8 @@ stages {
                     sh """
                         terraform ${params.ACTION} -target=null_resource.expenseApp \
                         -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars \
+                        -var token=${VAULT_TOKEN}
+
                         -auto-approve
                     """
                 }
