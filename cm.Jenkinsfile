@@ -24,6 +24,7 @@ stages {
   
         stage('Initiating Terraform') {
             steps {
+                withCredentials([string(credentialsId: 'vault_token', variable: 'token')])
                 sh "rm -rf .terraform"
                 sh "terraform init -reconfigure -backend-config=${params.ENVIRONMENT}/state.tf -var token=${VAULT_TOKEN}"
             }
@@ -31,6 +32,7 @@ stages {
 
         stage('Run Configuration Management') {
             steps {
+                withCredentials([string(credentialsId: 'vault_token', variable: 'token')])
                 script {
                     // Apply only the null_resource for configuration management
                     sh """
