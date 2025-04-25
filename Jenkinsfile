@@ -26,10 +26,8 @@ pipeline {
             }
     stage('Terrafom apply') {
         steps {
-             sh "terraform ${params.ACTION} -target=module.mysql  -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars -auto-approve -var token=${vault_token}"
-             sh "terraform ${params.ACTION} -target=module.backend  -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars -auto-approve -var token=${vault_token}"
-             sh "terraform ${params.ACTION} -target=module.frontend  -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars -auto-approve -var token=${vault_token}" 
-              }
+             sh "terraform ${params.ACTION} -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars -auto-approve -var token=${vault_token}"
+                           }
             }
 
     // stage('Sanity check before terraform apply') {
