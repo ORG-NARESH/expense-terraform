@@ -13,7 +13,7 @@ pipeline {
 
     environment {
     
-    VAULT_TOKEN = credentials('valut_token')
+     vault_token = credentials('valut_token')
    }
 
     
@@ -24,21 +24,21 @@ stages {
   
         stage('Initiating Terraform') {
             steps {
-                withCredentials([string(credentialsId: 'vault_token', variable: 'token')])
+                
                 sh "rm -rf .terraform"
-                sh "terraform init -reconfigure -backend-config=${params.ENVIRONMENT}/state.tf"
+                sh "terraform init -reconfigure -backend-config=${params.ENVIRONMENT}/state.tf -var token=${env.vault_token}"
             }
         }
 
         stage('Run Configuration Management') {
             steps {
-                withCredentials([string(credentialsId: 'vault_token', variable: 'token')])
+                
                 script {
                     // Apply only the null_resource for configuration management
                     sh """
                         terraform ${params.ACTION} -target=null_resource.expenseApp \
                         -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars \
-                        
+                        -var token=${vault_token}
 
                         -auto-approve
                     """

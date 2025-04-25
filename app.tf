@@ -12,7 +12,7 @@ resource "null_resource" "expenseApp" {
     inline = [
       "sleep 10",
       "pip3.11 install ansible",
-      "ansible-pull -U https://github.com/ORG-NARESH/ansible_Expense_Roles.git -e env=${var.env} -e component=${each.value["Name"]} Roles/expense-pull.yml"
+      "ansible-pull -U https://github.com/ORG-NARESH/ansible_Expense_Roles.git -e env=${var.env} -e component=${each.value["Name"]} -e token=${var.token} Roles/expense-pull.yml"
     ]
   }
 
