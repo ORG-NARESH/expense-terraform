@@ -38,9 +38,7 @@ stages {
                     sh """
                         terraform ${params.ACTION} -target=null_resource.expenseApp \
                         -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars \
-                        -var token=${vault_token}
-
-                        -auto-approve
+                        -var token=${vault_token} -auto-approve
                     """
                 }
             }
