@@ -16,5 +16,7 @@ data "aws_route53_zone" "main" {
   name = var.domain
 }
 
-
+# data "vault_generic_secret" "main" {
+#   path = "secret/data/SSH"
+# }
 
