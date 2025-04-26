@@ -4,11 +4,11 @@ module "mysql" {
   zone_id = data.aws_route53_zone.main.zone_id
   domain  = var.domain
   #vpc_security_group_ids  = [aws_security_group.main.id]  
-  Name          = "mysql"
-  env           = var.env
-  instance_type = var.components["mysql"].instance_type
-  port_no       = var.components["mysql"].port_no
-  #port_no_of_nodeexporter = var.components["mysql"].port_no_of_nodeexporter
+  Name                    = "mysql"
+  env                     = var.env
+  instance_type           = var.components["mysql"].instance_type
+  port_no                 = var.components["mysql"].port_no
+  port_no_of_nodeexporter = var.components["mysql"].port_no_of_nodeexporter
 
 
 }
