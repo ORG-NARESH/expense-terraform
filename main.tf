@@ -4,10 +4,11 @@ module "mysql" {
   zone_id = data.aws_route53_zone.main.zone_id
   domain  = var.domain
   #vpc_security_group_ids  = [aws_security_group.main.id]  
-  Name          = "mysql"
-  env           = var.env
-  instance_type = var.components["mysql"].instance_type
-  port_no       = var.components["mysql"].port_no
+  Name                     = "mysql"
+  env                      = var.env
+  instance_type            = var.components["mysql"].instance_type
+  port_no                  = var.components["mysql"].port_no
+  port_no_of_node-exporter = var.components["mysql"].port_no_of_node-exporter
 
 
 }
@@ -19,10 +20,11 @@ module "backend" {
   zone_id    = data.aws_route53_zone.main.zone_id
   domain     = var.domain
   #vpc_security_group_ids =  var.vpc_security_group_ids
-  Name          = "backend"
-  env           = var.env
-  instance_type = var.components["backend"].instance_type
-  port_no       = var.components["backend"].port_no
+  Name                     = "backend"
+  env                      = var.env
+  instance_type            = var.components["backend"].instance_type
+  port_no                  = var.components["backend"].port_no
+  port_no_of_node-exporter = var.components["backend"].port_no_of_node-exporter
 
 
 }
@@ -34,10 +36,11 @@ module "frontend" {
   zone_id    = data.aws_route53_zone.main.zone_id
   domain     = var.domain
   #vpc_security_group_ids = var.vpc_security_group_ids
-  Name          = "frontend"
-  env           = var.env
-  instance_type = var.components["frontend"].instance_type
-  port_no       = var.components["frontend"].port_no
+  Name                     = "frontend"
+  env                      = var.env
+  instance_type            = var.components["frontend"].instance_type
+  port_no                  = var.components["frontend"].port_no
+  port_no_of_node-exporter = var.components["frontend"].port_no_of_node-exporter
 
 
 }
