@@ -54,8 +54,8 @@ module "node123" {
   #vpc_security_group_ids = var.vpc_security_group_ids
   Name          = "node123"
   env           = var.env
-  instance_type = var.components["node123"].instance_type
-  port_no       = var.components["node123"].port_no
+  instance_type = var.components["node123"]["instance_type"]
+  port_no       = var.components["node123"]["port_no"]
   #port_no_of_nodeexporter = var.components["frontend"].port_no_of_nodeexporter
 
 
