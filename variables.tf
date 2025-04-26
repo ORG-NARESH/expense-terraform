@@ -21,10 +21,10 @@ variable "components" {
 
   default = {
     mysql = {
-      Name                    = "mysql"
-      port_no                 = "3306"
-      instance_type           = "t3.micro"
-      port_no_of_nodeexporter = "9100"
+      Name          = "mysql"
+      port_no       = "3306"
+      instance_type = "t3.micro"
+      #port_no_of_nodeexporter = "9100"
 
     }
     backend = {
