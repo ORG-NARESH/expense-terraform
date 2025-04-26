@@ -11,5 +11,4 @@ terraform {
 
 # provider "vault" {
 #   address = "https://3.227.242.157:8200"
-
 # }
