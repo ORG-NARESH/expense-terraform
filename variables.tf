@@ -43,6 +43,14 @@ variable "components" {
       port_no_of_nodeexporter = "9100"
 
     }
+    node123 = {
+
+      Name                    = "node123"
+      port_no                 = "80"
+      instance_type           = "t2.small"
+      port_no_of_nodeexporter = "9100"
+
+    }
 
   }
 }

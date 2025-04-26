@@ -26,7 +26,7 @@ pipeline {
             }
     stage('Terrafom apply') {
         steps {
-             sh "terraform ${params.ACTION} -target=module.mysql -target=module.backend -target=module.frontend -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars -auto-approve -var token=${vault_token}"
+             sh "terraform ${params.ACTION} -target=module.mysql -target=module.backend -target=module.frontend -target=module.node123 -var-file=${params.ENVIRONMENT}/${params.ENVIRONMENT}.tfvars -auto-approve -var token=${vault_token}"
                            }
             }
 
