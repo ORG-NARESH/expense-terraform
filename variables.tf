@@ -1,13 +1,13 @@
-variable "user" {
-  default = "ec2-user"
-}
+# variable "user" {
+#   default = "ec2-user"
+# }
 variable "token" {
 
 }
 
-variable "password" {
-  default = "DevOps321"
-}
+# variable "password" {
+#   default = "DevOps321"
+# }
 
 variable "domain" {
   default = "eternallearnings.shop"
