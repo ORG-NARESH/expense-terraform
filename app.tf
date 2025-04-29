@@ -3,8 +3,8 @@ resource "null_resource" "expenseApp" {
   for_each   = var.components
   connection {
     type     = "ssh"
-    user     = var.user
-    password = var.password
+    user     = data.vault_generic_secret.main.data["SSH_USER"]
+    password = data.vault_generic_secret.main.data["SSH_PASS"]
     host     = "${each.value["Name"]}-${var.env}.${var.domain}"
   }
 
