@@ -1,7 +1,7 @@
 # variable "user" {
 #   default = "ec2-user"
 # }
-variable "token" {
+variable "vault_token" {
 
 }
 
