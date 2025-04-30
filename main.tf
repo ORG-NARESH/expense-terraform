@@ -10,6 +10,7 @@ module "mysql" {
   port_no                 = var.components["mysql"].port_no
   port_no_of_nodeexporter = var.components["mysql"].port_no_of_nodeexporter
   prometheus_server       = var.prometheus_server
+  Monitor                 = var.components["mysql"].Monitor
 
 
 }
@@ -27,6 +28,7 @@ module "backend" {
   port_no                 = var.components["backend"].port_no
   port_no_of_nodeexporter = var.components["backend"].port_no_of_nodeexporter
   prometheus_server       = var.prometheus_server
+  Monitor                 = var.components["backend"].Monitor
 
 
 
@@ -45,6 +47,7 @@ module "frontend" {
   port_no                 = var.components["frontend"].port_no
   port_no_of_nodeexporter = var.components["frontend"].port_no_of_nodeexporter
   prometheus_server       = var.prometheus_server
+  Monitor                 = var.components["frontend"].Monitor
 
 
 }
