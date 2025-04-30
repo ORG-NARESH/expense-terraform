@@ -8,16 +8,19 @@ components = {
     port_no       = "3306"
     instance_type = "t3.medium"
     #port_no_of_nodeexporter = "9100"
-    Monitor = "yes"
+    Monitor                 = "yes"
+    port_no_of_nodeexporter = "9100"
+    prometheus_server       = ["172.31.7.38/32"]
 
   }
   backend = {
 
-    Name          = "backend"
-    port_no       = "8080"
-    instance_type = "t3.micro"
-    #port_no_of_nodeexporter = "9100"
-    Monitor = "yes"
+    Name                    = "backend"
+    port_no                 = "8080"
+    instance_type           = "t3.micro"
+    Monitor                 = "yes"
+    port_no_of_nodeexporter = "9100"
+    prometheus_server       = ["172.31.7.38/32"]
 
   }
   frontend = {
@@ -26,7 +29,9 @@ components = {
     port_no       = "80"
     instance_type = "t3.small"
     #port_no_of_nodeexporter = "9100"
-    Monitor = "yes"
+    Monitor                 = "yes"
+    port_no_of_nodeexporter = "9100"
+    prometheus_server       = ["172.31.7.38/32"]
 
   }
   # node123 = {
