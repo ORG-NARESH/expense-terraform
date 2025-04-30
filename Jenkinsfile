@@ -13,7 +13,7 @@ pipeline {
 }  
  environment {
     
-     vault_token = credentials('vault_token')
+     vault_token = credentials('vault_token')   
    } 
 
  stages {
