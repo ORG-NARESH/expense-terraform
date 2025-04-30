@@ -9,6 +9,7 @@ module "mysql" {
   instance_type           = var.components["mysql"].instance_type
   port_no                 = var.components["mysql"].port_no
   port_no_of_nodeexporter = var.components["mysql"].port_no_of_nodeexporter
+  prometheus_server       = var.prometheus_server
 
 
 }
@@ -25,6 +26,8 @@ module "backend" {
   instance_type           = var.components["backend"].instance_type
   port_no                 = var.components["backend"].port_no
   port_no_of_nodeexporter = var.components["backend"].port_no_of_nodeexporter
+  prometheus_server       = var.prometheus_server
+
 
 
 }

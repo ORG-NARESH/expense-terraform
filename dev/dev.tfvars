@@ -1,5 +1,7 @@
-env  = "dev"
-path = "expense-dev/SSH_CRED"
+env               = "dev"
+path              = "expense-dev/SSH_CRED"
+prometheus_server = ["172.31.7.38/32"]
+
 
 
 components = {
@@ -10,7 +12,7 @@ components = {
     instance_type           = "t3.medium"
     Monitor                 = "yes"
     port_no_of_nodeexporter = "9100"
-    prometheus_server       = ["172.31.7.38/32"]
+
 
   }
   backend = {
@@ -20,7 +22,7 @@ components = {
     instance_type           = "t3.micro"
     Monitor                 = "yes"
     port_no_of_nodeexporter = "9100"
-    prometheus_server       = ["172.31.7.38/32"]
+
 
   }
   frontend = {
@@ -30,7 +32,7 @@ components = {
     instance_type           = "t3.small"
     Monitor                 = "yes"
     port_no_of_nodeexporter = "9100"
-    prometheus_server       = ["172.31.7.38/32"]
+
 
   }
   # node123 = {

@@ -9,8 +9,8 @@ variable "token" {
 variable "domain" {
   default = "eternallearnings.shop"
 }
-variable "prometheus_server" {}
 
+variable "prometheus_server" {}
 
 
 variable "env" {}
