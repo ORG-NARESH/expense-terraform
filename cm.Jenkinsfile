@@ -26,7 +26,7 @@ stages {
             steps {
                 
                 sh "rm -rf .terraform"
-                sh "terraform init -reconfigure -backend-config=${params.ENVIRONMENT}/state.tf -var token=${env.vault_token}"
+                sh "terraform init -reconfigure -backend-config=${params.ENVIRONMENT}/state.tf -var token=${vault_token}"
             }
         }
 
