@@ -1,9 +1,10 @@
 # variable "user" {
 #   default = "ec2-user"
 # }
-# variable "vault_token" {
-
-# }
+variable "token" {
+  description = "Vault token for accessing secrets"
+  type        = string
+}
 
 # variable "password" {
 #   default = "DevOps321"
