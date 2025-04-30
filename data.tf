@@ -17,6 +17,7 @@ data "aws_route53_zone" "main" {
 }
 
 data "vault_generic_secret" "main" {
-  path = "secret/data/SSH_CRED"
+  path = "expense-dev/SSH_CRED"
+
 }
 
