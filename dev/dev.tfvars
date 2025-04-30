@@ -1,13 +1,13 @@
 env  = "dev"
 path = "expense-dev/SSH_CRED"
 
+
 components = {
 
   mysql = {
-    Name          = "mysql"
-    port_no       = "3306"
-    instance_type = "t3.medium"
-    #port_no_of_nodeexporter = "9100"
+    Name                    = "mysql"
+    port_no                 = "3306"
+    instance_type           = "t3.medium"
     Monitor                 = "yes"
     port_no_of_nodeexporter = "9100"
     prometheus_server       = ["172.31.7.38/32"]
@@ -25,10 +25,9 @@ components = {
   }
   frontend = {
 
-    Name          = "frontend"
-    port_no       = "80"
-    instance_type = "t3.small"
-    #port_no_of_nodeexporter = "9100"
+    Name                    = "frontend"
+    port_no                 = "80"
+    instance_type           = "t3.small"
     Monitor                 = "yes"
     port_no_of_nodeexporter = "9100"
     prometheus_server       = ["172.31.7.38/32"]

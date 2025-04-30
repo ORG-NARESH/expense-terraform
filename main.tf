@@ -41,6 +41,7 @@ module "frontend" {
   instance_type           = var.components["frontend"].instance_type
   port_no                 = var.components["frontend"].port_no
   port_no_of_nodeexporter = var.components["frontend"].port_no_of_nodeexporter
+  prometheus_server       = var.prometheus_server
 
 
 }
