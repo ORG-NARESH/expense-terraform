@@ -1,4 +1,5 @@
-env = "dev"
+env  = "dev"
+path = "expense-dev/SSH_CRED"
 
 components = {
 
@@ -7,6 +8,7 @@ components = {
     port_no       = "3306"
     instance_type = "t3.medium"
     #port_no_of_nodeexporter = "9100"
+    Monitor = "yes"
 
   }
   backend = {
@@ -15,6 +17,7 @@ components = {
     port_no       = "8080"
     instance_type = "t3.micro"
     #port_no_of_nodeexporter = "9100"
+    Monitor = "yes"
 
   }
   frontend = {
@@ -23,6 +26,7 @@ components = {
     port_no       = "80"
     instance_type = "t3.small"
     #port_no_of_nodeexporter = "9100"
+    Monitor = "yes"
 
   }
   # node123 = {

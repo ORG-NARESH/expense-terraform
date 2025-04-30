@@ -17,6 +17,9 @@ variable "domain" {
 
 
 variable "env" {}
+variable "path" {
+
+}
 
 variable "components" {
 

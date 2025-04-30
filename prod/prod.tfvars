@@ -1,5 +1,5 @@
-env = "prod"
-
+env  = "prod"
+path = "expense-prod/SSH_CRED"
 
 components = {
 

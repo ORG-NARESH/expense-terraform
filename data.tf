@@ -17,10 +17,12 @@ data "aws_route53_zone" "main" {
 }
 
 data "vault_generic_secret" "main" {
-  path = "expense-dev/SSH_CRED"
+  path = var.path
 
 
 }
+
+
 
 # output "ssh" {
 #   value = data.vault_generic_secret.main.data["SSH_USER"]
