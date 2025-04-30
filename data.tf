@@ -22,6 +22,6 @@ data "vault_generic_secret" "main" {
 
 }
 
-output "ssh" {
-  value = data.vault_generic_secret.main.data["SSH_USER"]
-}
+# output "ssh" {
+#   value = data.vault_generic_secret.main.data["SSH_USER"]
+# }
